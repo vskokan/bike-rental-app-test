@@ -7,13 +7,8 @@ const corsOptions = {
     credentials: true
   };
 
-
-
-
 app.use(cors(corsOptions));
-
 app.use(bodyParser.json());
-
 require("./src/bike-routes")(app);
 
 const serveStatic = require('serve-static');
