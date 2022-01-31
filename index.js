@@ -19,8 +19,7 @@ require("./src/bike-routes")(app);
 const serveStatic = require('serve-static');
 app.use(serveStatic(__dirname + "/dist"));
 
-app.listen(80) //, '192.168.0.101'); 
-
-// app.listen(
-//   () => console.info('Server listening on port ', 3000)
-// );
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
